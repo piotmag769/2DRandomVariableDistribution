@@ -16,3 +16,5 @@ In general the files' content has match specification of [read.table](https://ww
 - there has to be a newline at the end of the file
 
 You can find an example input file [there](example_data.txt).
+## Example console output
+![output](example_output.jpg)
