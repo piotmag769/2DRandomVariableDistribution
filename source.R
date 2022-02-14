@@ -1,3 +1,4 @@
+# functions' description in task_description.md file
 prob <- function(m)
 {
   m/sum(m)
@@ -25,17 +26,8 @@ conditional <- function(prob, i, v)
 
 mean <- function(prob, i=NA)
 {
-  x_mean <- 0
-  x_bound <- boundary(prob, 1)
-  
-  for(j in 1:length(x_bound))
-    x_mean <- x_mean + x_bound[[j]]*j
-  
-  y_mean <- 0
-  y_bound <- boundary(prob, 2)
-
-  for(j in 1:length(y_bound))
-    y_mean <- y_mean + y_bound[[j]]*j
+  x_mean <- sum(c(1:nrow(prob))*boundary(prob, 1))
+  y_mean <- sum(c(1:ncol(prob))*boundary(prob, 2))
 
   if(is.na(i))
     return(c(x_mean, y_mean))
@@ -92,9 +84,12 @@ independent <- function(prob)
 }
 
 
+# getting input from file
 input <- as.matrix(read.table(commandArgs(trailingOnly=TRUE), header=FALSE, sep=" "))
 
 probability <- prob(input)
+
+# just printing output
 cat("\nProbability table:\n")
 print(probability)
 cat("\nMarginal distribution of X:\n", boundary(probability, 1))
