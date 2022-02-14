@@ -1,6 +1,6 @@
 ## Task description
 Write a script in R that implements a two-dimensional discrete distribution. The assumptions are as follows:
-- The set of probable values for S has the form {1,. . . . m} × {1,. . . , n} for some m, n ∈ N.
+- The set of probable values for S has the form {1, ..., m} × {1, ..., n} for some m, n ∈ N.
 - The (full) distribution is realized in the form of a probability matrix with non-negative terms adding up to 1
 i.e. if X and Y are components of a variable with an implemented distribution then prob [i, j] = P (X = i, Y = j).
 - The matrices from the previous point are formed by the prob(m) function whose argument is the matrix of
